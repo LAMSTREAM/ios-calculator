@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/ios-calculator-react/static/css/main.3f578c41.css",
+    "main.js": "/ios-calculator-react/static/js/main.cdfb5f0c.js",
+    "static/js/845.1f282f8e.chunk.js": "/ios-calculator-react/static/js/845.1f282f8e.chunk.js",
+    "static/js/787.e636688a.chunk.js": "/ios-calculator-react/static/js/787.e636688a.chunk.js",
+    "static/media/clicksound.mp3": "/ios-calculator-react/static/media/clicksound.d798b6bd7dc22547bbbe.mp3",
+    "index.html": "/ios-calculator-react/index.html",
+    "main.3f578c41.css.map": "/ios-calculator-react/static/css/main.3f578c41.css.map",
+    "main.cdfb5f0c.js.map": "/ios-calculator-react/static/js/main.cdfb5f0c.js.map",
+    "845.1f282f8e.chunk.js.map": "/ios-calculator-react/static/js/845.1f282f8e.chunk.js.map",
+    "787.e636688a.chunk.js.map": "/ios-calculator-react/static/js/787.e636688a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3f578c41.css",
+    "static/js/main.cdfb5f0c.js"
+  ]
+}

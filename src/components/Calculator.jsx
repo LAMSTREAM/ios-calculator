@@ -7,10 +7,14 @@ import "./Calculator.css";
 import audio from "../audio/clicksound.mp3";
 
 function precessDisplayValue(st) {
+  if (st === "0.") {
+    return st;
+  }
+
   let re_st = st;
 
   // Judge if need science notion
-  if (st !== "0" && (abs(st) < 0.00000001 || abs(st) > 999999999)) {
+  if (st !== "0" && String(abs(st)).length > 9) {
     // trans to science notion and trunc
     re_st = format(Number(st), {notation: 'exponential'});
     let _a = re_st.split("e");
@@ -24,6 +28,16 @@ function precessDisplayValue(st) {
   }
 
   // add comma to number
+  let _s = "";
+  let _m = re_st.indexOf("-e");
+  let _n = re_st.indexOf("e");
+  if (_m !== -1) {
+    _s = re_st.slice(_m);
+    re_st = re_st.slice(0,_m)
+  } else if (_n !== -1) {
+    _s = re_st.slice(_n);
+    re_st = re_st.slice(0,_n)
+  }
   let _a = re_st.split(".");
   let _b = _a[0];
   let commaNumber = Math.floor(_b.length / 3);
@@ -37,18 +51,19 @@ function precessDisplayValue(st) {
     re_st = _b;
   }
 
-  return re_st;
+  return re_st + _s;
 }
 
 const CalculatorDisplay = memo(({value}) => {
   let className;
-  if (value.replace(/[+|.]/gm, "").length <= 6) {
+  let displayValue = precessDisplayValue(value);
+
+  if (displayValue.replace(/[+|.]/gm, "").length <= 6) {
     className = " bigger-font";
   } else {
     className = " smaller-font";
   }
 
-  let displayValue = precessDisplayValue(value);
   return (
     <div className="display">
       <div className={"display-value" + className}>{displayValue}</div>
@@ -194,6 +209,8 @@ function calReducer(draft, action) {
           draft[draft.calState] = action.value;
         } else if (draft[draft.calState] === "-0" && action.value !== ".") {
           draft[draft.calState] = "-" + action.value;
+        } else if (action.value === "." && draft[draft.calState].indexOf(".") !== -1) {
+          break;
         } else {
           draft[draft.calState] = draft[draft.calState] + action.value;
         }

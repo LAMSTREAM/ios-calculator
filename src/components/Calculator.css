@@ -118,15 +118,15 @@
 }
 
 .number-area .button[data-clicked="1"] {
-  animation: number-clicked 0.3s 1;
+  animation: number-clicked 0.15s 1;
 }
 
 .function-area .button[data-clicked="1"] {
-  animation: function-clicked 0.3s 1;
+  animation: function-clicked 0.15s 1;
 }
 
 .equal[data-clicked="1"] {
-  animation: equal-clicked 0.3s 1;
+  animation: equal-clicked 0.15s 1;
 }
 
 @keyframes number-clicked {

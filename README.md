@@ -14,5 +14,5 @@ If you find any issue in it, please feel free to contact me😀.
 ### `npm start`
 
 ## Demonstration: 
-Demo url: https://lamstream.github.io/ios-calculator-demo/<br>
+Demo url: https://lamstream.github.io/ios-calculator-react/<br>
 ![image](https://user-images.githubusercontent.com/58248467/234338549-5a15d537-0bc3-489d-adb1-a19bc67770e8.png)
